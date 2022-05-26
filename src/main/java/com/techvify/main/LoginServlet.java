@@ -14,24 +14,26 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String userName = req.getParameter("userName");
-        String passWord = req.getParameter("passWord");
-
         resp.setContentType("text/html");
         PrintWriter printWriter = resp.getWriter();
 
         printWriter.print("<html>");
         printWriter.print("<body>");
-
         printWriter.print("<h1>Login Page</h1>");
-        printWriter.print("<p> Username :: " + userName + "</p>");
-        printWriter.print("<p> Password :: " + passWord + "</p>");
+
+        printWriter.print("<form action= \"/MavenFromScratchFrame/UserLoginSuccessfully\" method = 'post'>");
+        printWriter.print("<label for=\"userName\">Username:</label><br>");
+        printWriter.print("<input type=\"text\" id=\"userName\" name=\"userName\" value=\"\"><br>");
+        printWriter.print("<label for=\"passWord\">Password:</label><br>");
+        printWriter.print("<input type=\"text\" id=\"passWord\" name=\"passWord\" value=\"\"><br><br>");
+        printWriter.print("<input type=\"submit\" value=\"Submit\">");
+        //printWriter.print("<p for=\"fname\">Forgot password</p><br>");
+        printWriter.print("</form>");
+
 
         printWriter.print("</body>");
         printWriter.print("</html>");
         printWriter.close();
 
-        System.out.println("Username :: " + userName);
-        System.out.println("Password :: " + passWord);
     }
 }
