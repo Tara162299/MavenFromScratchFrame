@@ -10,10 +10,9 @@ import java.io.PrintWriter;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         resp.setContentType("text/html");
         PrintWriter printWriter = resp.getWriter();
 
@@ -26,7 +25,8 @@ public class LoginServlet extends HttpServlet {
         printWriter.print("<input type=\"text\" id=\"userName\" name=\"userName\" value=\"\"><br>");
         printWriter.print("<label for=\"passWord\">Password:</label><br>");
         printWriter.print("<input type=\"text\" id=\"passWord\" name=\"passWord\" value=\"\"><br><br>");
-        printWriter.print("<input type=\"submit\" value=\"Submit\">");
+        printWriter.print("<input type=\"submit\" value=\"Submit\"><br><br>");
+        printWriter.print("<input type=\"forgot password\" value=\"Forgot password\">");
         //printWriter.print("<p for=\"fname\">Forgot password</p><br>");
         printWriter.print("</form>");
 
